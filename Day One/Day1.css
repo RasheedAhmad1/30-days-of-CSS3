@@ -1,0 +1,220 @@
+/* Defining some variables */
+:root {
+    --bg-color: #131339;
+}    
+
+/* General styling */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    text-align: center;
+    background: var(--bg-color);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h3 {
+    padding: 18px 0 12px 0;
+    color: #FFF;
+}
+
+button {
+    margin: 12px 12px 0 12px;
+}
+
+/* === Facebook Style Buttons ===*/
+/* Buttons General styling  */
+.facebook_style_btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 2px;
+}
+
+/* Dark Button Styling */
+.facebook_style_dark {
+    -moz-box-shadow:    inset 0 1px 0 0 #4d73BF;
+    -webkit-box-shadow: inset 0 1px 0 0 #4d73BF;
+    box-shadow:         inset 0 1px 0 0 #4d73BF;
+    background: #4267B2;
+    color: #FFF;
+    border: 1px solid #4267B2;
+    text-shadow: 0 1px 0 #3359A5;
+}
+
+.facebook_style_dark:hover {
+    background: #2B54A7;
+}
+
+.facebook_style_dark:active {
+    background: #1D4698;
+    border-color: #1D4698;
+}
+
+/* Light Button Styling */
+.facebook_style_light {
+    background: #F6F7F9;
+    border: 1px solid #CED0D4;
+    color: #4B4F56;
+}
+
+.facebook_style_light:hover {
+    background: #E9EBEE;
+}
+
+.facebook_style_light:active {
+    background: #E9EBEE;
+    border-color: #D8DADE;
+}
+
+/* === 3D Buttons ===*/
+/* Button 1 Styling */
+.btn_3d_1 {
+    position: relative;
+    background: orangered;
+    border: none;
+    color: #FFF;
+    padding: 15px 24px;
+    font-size: 1.4rem;
+    box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
+    outline: none;
+}
+
+.btn_3d_1:hover {
+    background: hsl(16, 100%, 45%);
+}
+
+.btn_3d_1:active {
+    background: hsl(16, 100%, 40%);
+    top: 3px;
+    left: -3px;
+    box-shadow: -3px 3px 0 hsl(16, 100%, 30%);
+}
+
+.btn_3d_1::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+
+    border: 6px solid transparent;
+    border-right: 6px solid hsl(16, 100%, 30%);
+    border-left-width: 0;
+    top: 0;
+    left: -6px;
+}
+
+.btn_3d_1::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+
+    border: 6px solid transparent;
+    border-top: 6px solid hsl(16, 100%, 30%);
+    border-bottom-width: 0;
+    right: 0;
+    bottom: -6px;
+}
+
+.btn_3d_1:active::before {
+    border: 3px solid transparent;
+    border-right: 3px solid hsl(16, 100%, 30%);
+    border-left-width: 0;
+    left: -3px;
+}
+
+.btn_3d_1:active::after {
+    border: 3px solid transparent;
+    border-top: 3px solid hsl(16, 100%, 30%);
+    border-bottom-width: 0;
+    bottom: -3px;
+}
+
+/* Button 2 Styling */
+.btn_3d_2 {
+    position: relative;
+
+    background: #ECD300;
+    background: -webkit-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 40%) );
+    background: -moz-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 40%) );
+    background: -o-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 40%) );
+    background: radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 40%) );
+
+    font-size: 1.4rem;
+    text-shadow: 0 -1px 0 #C3AF07;
+    color: #FFF;
+    border: 1px solid hsl(54, 100%, 20%);
+    border-radius: 100%;
+    height: 120px;
+    width: 120px;
+    z-index: 4px;
+
+    outline: none;
+
+    box-shadow: inset 0 1px 0 hsl(54, 100%, 50%),
+                0 2px 0 hsl(54, 100%, 20%),
+                0 3px 0 hsl(54, 100%, 18%),
+                0 4px 0 hsl(54, 100%, 16%),
+                0 5px 0 hsl(54, 100%, 14%),
+                0 6px 0 hsl(54, 100%, 12%),
+                0 7px 0 hsl(54, 100%, 10%),
+                0 8px 0 hsl(54, 100%, 8%),
+                0 9px 0 hsl(54, 100%, 6%);
+}
+
+.btn_3d_2:hover {
+    background: -webkit-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 35%) );
+    background: -moz-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 35%) );
+    background: -o-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 35%) );
+    background: radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 35%) );
+}
+
+.btn_3d_2:active {
+    background: -webkit-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 33%) );
+    background: -moz-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 33%) );
+    background: -o-radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 33%) );
+    background: radial-gradient( hsl(54, 100%, 50%), hsl(54, 100%, 33%) );
+
+    top: 2px;
+
+    box-shadow: inset 0 1px 0 hsl(54, 100%, 50%),
+                0 2px 0 hsl(54, 100%, 20%),
+                0 3px 0 hsl(54, 100%, 18%),
+                0 4px 0 hsl(54, 100%, 16%),
+                0 5px 0 hsl(54, 100%, 14%),
+                0 6px 0 hsl(54, 100%, 12%),
+                0 7px 0 hsl(54, 100%, 10%);
+}
+
+/* === Gradient Bordered Buttons ===*/
+/* Button 1 Styling */
+.btn_gradient_1 {
+    border-image: linear-gradient(45deg, darkblue, darkorchid);
+    border-width: 4px;
+    border-style: solid;
+    border-image-slice: 1;
+    padding: 6px 12px;
+}
+
+/* But in the above, we cannot apply "border-radius" property */
+/* Button 1 Styling */
+/* Thus let see another approach for "border-radius" property*/
+.btn_gradient_2 {
+    padding: 6px 12px;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, darkblue, darkorchid) border-box;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 0.4em;
+}
