@@ -1,0 +1,38 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    background-color: slategrey;
+    color: white;
+    height: 80px;
+}
+
+header h1 {
+    padding-top: 20px;
+}
+
+#container {
+    background-color: aliceblue;
+    padding: 24px 48px;
+}
+
+#container h3 {
+    margin: 12px 0 6px 0;
+}
+
+#container ul {
+    margin: 8px 0 4px 24px;
+}
+
+footer {
+    text-align: center;
+    background-color: silver;
+    color: gray;
+    height: 40px;
+}
