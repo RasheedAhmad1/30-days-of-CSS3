@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 Intermediate</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header>
+            <h1>CSS3 Intermediate/Advanced</h1>
+        </header>
+
+        <!-- Main Body Section -->
+        <div id="container">
+            <h2>Pseudo Elements and Classes</h2>
+            <!-- Pseudo Elements -->
+            <h3>Pseudo Elements:</h3>
+            <p>A <b>CSS pseudo-element</b> is a keyword added to a selector that lets you style a specific part of the selected element(s).<br />
+            For example, it can be used to:</p>
+            <ul>
+                <li>Style the first letter, or line, of an element</li>
+                <li>Insert content before, or after, the content of an element</li>
+            </ul>
+            <h4>Syntax</h4>
+            <pre>
+                <code>
+                    selector::pseudo-element {
+                        property: value;
+                    }
+                </code>
+            </pre>
+            <h4>Examples</h4>
+            <ul>
+                <li>first-line: Selects the first line.</li>
+                <li>first-letter: Selects the first letter.</li>
+                <li>before: Insert something before the content.</li>
+                <li>after: Insert something after the content.</li>
+                <li>marker: Selects the markers of list items.</li>
+                <li>selection: Selects the portion of an element that is selected by a user.</li>
+            </ul>
+
+            <!-- Pseudo Classes -->
+            <h3>Pseudo Classes:</h3>
+            <p>A pseudo-class is used to define a special state of an element.<br />
+            For example, it can be used to:</p>
+            <ul>
+                <li>Style an element when a user mouses over it</li>
+                <li>Style visited and unvisited links differently</li>
+                <li>Style an element when it gets focus</li>
+            </ul>
+            <h4>Syntax:</h4>
+            <pre>
+                <code>
+                    selector:pseudo-class {
+                        property: value;
+                    }
+                </code>
+            </pre>
+            <h4>Examples</h4>
+            <ul>
+                <li>Anchor Pseudo-classes: :link, :visited, :hover, :active</li>
+                <li>:first-child: pseudo-class matches a specified element that is the first child of another element.</li>
+                <li>:last-child: Selects element that is the last child of its parent.</li>
+                <li>nth-child(n): Selects the nth element of its parent.</li>
+            </ul>
+            <h5>:is Pesudo Class</h5>
+            <pre>
+                <code>
+                    div:is(a, p, .card, #id) {
+                        ...
+                    }
+
+                    :is(header, .card) p:hover {
+                        ...
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <small>Copyright info</small>
+        </footer>
+    </body>
+</html>
