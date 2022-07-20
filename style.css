@@ -39,6 +39,10 @@ header h1 {
     margin-left: 32px;
 }
 
+.container ol li {
+    margin-left: 32px;
+}
+
 .container h2 {
     margin: 18px 0 9px 0;
 }
@@ -46,6 +50,7 @@ header h1 {
 .container h3 {
     margin: 6px 0 3px 6px;
 }
+
 footer {
     text-align: center;
     background-color: #3b3b3b;
