@@ -11,173 +11,347 @@
         </header>
 
         <!-- Main Body Content -->
-        <div class="container">
-            <!-- Sidebar Section -->
-            <div>
-                <ul>
-                    <li>Pseudo Elements</li>
-                    <li>Pseudo Classes</li>
-                    <li>Flexbox</li>
-                    <li>Grid</li>
-                    <li>CSS3 Units</li>
-                </ul>
+        <main>
+            <div class="container">
+                <!-- Sidebar Section -->
+                <div>
+                    <ul>
+                        <li>Pseudo Elements</li>
+                        <li>Pseudo Classes</li>
+                        <li>Flexbox</li>
+                        <li>Grid</li>
+                        <li>CSS3 Units</li>
+                        <li>Transations</li>
+                        <li>Animations</li>
+                    </ul>
+                </div>
+                <!-- Body Section -->
+                <div>
+                    <!-- Pseudo Elements and Classes -->
+                    <!-- Pseudo Elements -->
+                    <h2>Pseudo Elements:</h2>
+                    <p>A <b>CSS pseudo-element</b> is a keyword added to a selector that lets you style a specific part of the selected element(s).<br />
+                    For example, it can be used to:</p>
+                    <ul>
+                        <li>Style the first letter, or line, of an element</li>
+                        <li>Insert content before, or after, the content of an element</li>
+                    </ul>
+                    <h3>Syntax</h3>
+                    <pre>
+                        <code>
+                            selector::pseudo-element {
+                                property: value;
+                            }
+                        </code>
+                    </pre>
+                    <h3>Examples</h3>
+                    <ul>
+                        <li>first-line: Selects the first line.</li>
+                        <li>first-letter: Selects the first letter.</li>
+                        <li>before: Insert something before the content.</li>
+                        <li>after: Insert something after the content.</li>
+                        <li>marker: Selects the markers of list items.</li>
+                        <li>selection: Selects the portion of an element that is selected by a user.</li>
+                    </ul>
+    
+                    <!-- Pseudo Classes -->
+                    <h2>Pseudo Classes:</h2>
+                    <p>A pseudo-class is used to define a special state of an element.<br />
+                    For example, it can be used to:</p>
+                    <ul>
+                        <li>Style an element when a user mouses over it</li>
+                        <li>Style visited and unvisited links differently</li>
+                        <li>Style an element when it gets focus</li>
+                    </ul>
+                    <h3>Syntax:</h3>
+                    <pre>
+                        <code>
+                            selector:pseudo-class {
+                                property: value;
+                            }
+                        </code>
+                    </pre>
+                    <h3>Examples</h3>
+                    <ul>
+                        <li>Anchor Pseudo-classes: :link, :visited, :hover, :active</li>
+                        <li>:first-child: pseudo-class matches a specified element that is the first child of another element.</li>
+                        <li>:last-child: Selects element that is the last child of its parent.</li>
+                        <li>nth-child(n): Selects the nth element of its parent.</li>
+                    </ul>
+                    <h3>:is Pesudo Class</h3>
+                    <pre>
+                        <code>
+                            div:is(a, p, .card, #id) {
+                                ...
+                            }
+    
+                            :is(header, .card) p:hover {
+                                ...
+                            }
+                        </code>
+                    </pre>
+    
+                    <!-- Flexible Box -->
+                    <h2>Flexbox</h2>
+                    <p>A CSS3 layout mode that provides an easy and clean way to arrange items within a container.</p>
+                    <ul>
+                        <li>No floats!</li>
+                        <li>Responsive and mobile friendly</li>
+                        <li>Positioning child elements is much easier</li>
+                        <li>Flex container's margins do not collapse with the margins of its contents</li>
+                        <li>Order of elements can be easily changed without editing the source HTML</li>
+                    </ul>
+                    <h3>Flexbox Model Concenpt</h3>
+                    <ul>
+                        <li>The ability to alter item width and height to best fit in its containers available free space</li>
+                        <li>Flexbox is direction-agnostic, means it works for both horizetal axis and vertical axis</li>
+                        <li>Built for small scale layouts while the upcoming "Grid" specification is for more large scale</li>
+                    </ul>
+                    <h3>Flex Properties</h3>
+                    <ul>
+                        <li>display: flex | inline</li>
+                        <li>flex-direction: defines the direction of the child elements, its a parent property. row(default) | column</li>
+                        <li>flex-wrap: if the screen sizes changes and you want the content to be wraped, use the "wrap" property. wrap | nowrap | wrapreverse</li>
+                        <li>flex-basis: defines the width of the child element like "width" property. But it is more flexy. <br />
+                            Rather than "width" use "flex-basis" in "flexboxes" &lt;length&gt;</li>
+                        <li>justify-content: Aligns the child elements horizantally. By defalaul, the child elements takes the whole width of the flexbox, first we will <br />
+                            give width to the child elements so that the parent container can have some empty space. Now we can <br />
+                            arrange the child elements horizentally by this property. flex-start(default) | flex-end | center | <br />
+                            space-between (gives margins between the child elements) | space-around (give margins on both sides of child element)</li>
+                        <li>align-self: felx-start | flex-end | center</li>
+                        <li>align-items: Aligns the child elements vertically. By default, the height of all child elements is same (stretch), if you want to give it the height<br />
+                            according to the content in it, use this parent property. flex-start | flex-end | center | stretch</li>
+                        <li>align-content: flex-start | flex-end | center</li>
+                        <li>flex-grow: &lt;length&gt;</li>
+                        <li>flex-shrink: &lt;length&gt;</li>
+                        <li>flex: defines length of the child item. &lt;length&gt;</li>
+                        <li>order: defines order of the child item, will everyone its oreder to work perfectly. &lt;length&gt;</li>
+                    </ul>
+    
+                    <!-- Grid -->
+                    <h2>Grid</h2>
+                    <p>Grid allows us to create two dimentional layouts on a webpage, and align items in <br />
+                    both columns and rows.</p>
+                    <ul>
+                        <li>display: gird - Initiates the grid property</li>
+                        <li>grid-template-columns: Parent property, give widths to each child to see the effect</li>
+                        <li>grid-column-gap (now column-gap): defines the gape between columns. values: any css unit like 1em</li>
+                        <li>grid-row-gap: defines the gape between rows. values: any css unit like 1em</li>
+                        <li>grid-gap: shorthand for grid-column-gap and grid-row-gap</li>
+                        <li>grid-auto-rows: defines the fixed height of the elements in the rows. For flexible height <br />
+                        use grid-auto-rows: minmax(100px, auto); - By default the height will be 100px but if the content <br />
+                        goes beyond that height, it will stretch out to fill the content.</li>
+                        <li>jsutify-items: Align items horizantally. start | center | end | stretch (default)</li>
+                        <li>align-items: Align items vertically. start | center | end | stretch (default)</li>
+                        <li>align-self and justify-self: Child property which aligns the child elements both horizantally and vertically.</li>
+                        <li>grid-column: Stretches the child element horizantally. e.g: grid-column: 1/3; stretches the element from one to three horizantally.</li>
+                        <li>grid-row: Stretches the child element vertically. e.g: grid-row: 1/3; stretches the element from one to three vertically.</li>
+                    </ul>
+                    <p>In "grid-template-columns" use "fractions" instead of other CSS units as other units you gonna run into margins issues.<br />
+                    1fr 2fr means the second column will be double of the first column.<br />
+                    Examples: <br />
+                    - 1fr 2fr 1fr - First and third column will be same width and the second will be the double<br />
+                    - 1fr 1fr 1fr = repeat(3, 1fr) - Repeat three times 1fr.<br />
+                    - 1fr 2fr 1fr 2fr = repeat(4, 1fr 2fr)</p>
+                    <h3>Nesting Grids</h3>
+    
+                    <!-- Media Queries -->
+                    <h2>Media Queries</h2>
+                    <p>- Allows us to create CSS rules based on various parameters (viewport size, device type etc).<br />
+                    - We can arrange our layout to suite a wide variety of different / screen sizes.</p>
+                    <h3>Syntax:</h3>
+                    <p>@media &lt;media-type&gt; and (expression) { CSS code } <br />
+                    - media-types: scree | print | TV | speech or all</p>
+                    <h3>Example:</h3>
+                    <p>- @media TV and (min-width: 1200px) {} <br />
+                    - @media screen and (max-width: 800px) {} - apply the CSS when the screen is 800px and less, if the screen is bigger than 800px then do not apply the rules. <br />
+                    - @media (orientation: landscape/portrait) and (max-width: 700px) {} <br />
+                    - @media (orientation: portrait) {}</p>
+    
+                    <!-- min-widht / max-width -->
+                    <!-- Max-Width -->
+                    <h2>Max-Width</h2>
+                    <p>Defines the max-width of the media, when we set the media width say "max-width: 900px" <br />
+                    and now if we increase the media size more than 900px, the defined size will remain 900px.</p>
+                    <!-- Min-Width -->
+                    <h2>Min-Width</h2>
+                    <p>Defines the min-width of the media, when we set the media width say "min-width: 378px" <br />
+                    and now if we decrease the media size less than 378px, the defined size will remain 378px.</p>
+                    <p>No matther if we increase or decrease the size of the media whose maxium width will be 900px <br />
+                    and minimum width will remain 378px.</p>
+    
+                    <!-- CSS Units -->
+                    <h2>CSS Units</h2>
+                    <p>There are many different units that you can use to define sizes in CSS.</p>
+                    <h3>Absolute Units</h3>
+                    <h3>Relative Units</h3>
+    
+                    <!-- Transations -->
+                    <h2>Transations</h2>
+                    <p>Transion enables us to define the transition between two states of an element. <br />
+                    To create a transition effect, you must specify two things:</p>
+                    <ul>
+                        <li>the CSS property you want to add effect to</li>
+                        <li>the duration of the effect</li>
+                    </ul>
+    
+                    <h3>Example:</h3>
+                    <p>The following example shows a 100px * 100px red &lt;div&gt; element. The &lt;div&gt; element has also specified a transition effect for the width property, with a duration of 2 seconds:</p>
+                    <pre>
+                        <code>
+                            div {
+                                width: 100px;
+                                height: 100px;
+                                background: red;
+                                transition: width 2s;
+                              }
+                        </code>
+                    </pre>
+                    <p>The transition effect will start when the specified CSS property (width) changes value. <br />
+                    Now, let us specify a new value for the width property when a user mouses over the &lt;div&gt; element:</p>
+                    <pre>
+                        <code>
+                            div:hover {
+                                width: 300px;
+                              }
+                        </code>
+                    </pre>
+    
+                    <h3>Change Several Property Values</h3>
+                    <p>Can be achieved by separting with comma.</p>
+                    <pre>
+                        <code>
+                            div {
+                                transition: width 2s, height 4s;
+                              }
+                        </code>
+                    </pre>
+    
+                    <h3>Porperties:</h3>
+                    <ul>
+                        <li>transition</li>
+                        <li>transition-delay</li>
+                        <li>transition-duration</li>
+                        <li>transition-property</li>
+                        <li>transition-timing-function</li>
+                    </ul>
+    
+                    <h3>transition-delay</h3>
+                    <p>The transition-delay property specifies a delay (in seconds) for the transition effect. <br />
+                    The following example has a 1 second delay before starting:</p>
+                    <pre>
+                        <code>
+                            div {
+                                transition-delay: 1s;
+                              }
+                        </code>
+                    </pre>
+    
+                    <h3>transition-duration</h3>
+                    <p>Specifies how many seconds or milliseconds a transition effect takes to complete.</p>
+    
+                    <h3>transition-property</h3>
+                    <p>Specifies the name of the CSS property the transition effect is for.</p>
+    
+                    <h3>transition-timing-function</h3>
+                    <p>The transition-timing-function property specifies the speed curve of the transition effect.</p>
+                    <ul>
+                        <li>ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)</li>
+                        <li>linear - specifies a transition effect with the same speed from start to end</li>
+                        <li>ease-in - specifies a transition effect with a slow start</li>
+                        <li>ease-out - specifies a transition effect with a slow end</li>
+                        <li>ease-in-out - specifies a transition effect with a slow start and end</li>
+                        <li>cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function</li>
+                    </ul>
+                    
+                    <h3>transition</h3>
+                    <p>A shorthand property for setting the four transition properties into a single property.</p>
+                    <pre>
+                        <code>
+                            div {
+                                transition: width 2s linear 1s;
+                              }
+                        </code>
+                        <ol>
+                            <li>transation-propterty</li>
+                            <li>transation-duration</li>
+                            <li>transation-timing-function</li>
+                            <li>transation-delay</li>
+                        </ol>
+                    </pre>
+                    <!-- Animations -->
+                    <h2>Animations</h2>
+                    <p>An animation lets an element gradually change from one style to another. <br />
+                        You can change as many CSS properties you want, as many times as you want. <br />
+                        To use CSS animation, you must first specify some keyframes for the animation. <br />
+                        Keyframes hold what styles the element will have at certain times.</p>
+                    <ul>
+                        <li>@keyframes	Specifies the animation code</li>
+                        <li>animation	A shorthand property for setting all the animation properties</li>
+                        <li>animation-delay	Specifies a delay for the start of an animation</li>
+                        <li>animation-direction	Specifies whether an animation should be played forwards, backwards or in alternate cycles</li>
+                        <li>animation-duration	Specifies how long time an animation should take to complete one cycle</li>
+                        <li>animation-fill-mode	Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both)</li>
+                        <li>animation-iteration-count	Specifies the number of times an animation should be played</li>
+                        <li>animation-name	Specifies the name of the @keyframes animation</li>
+                        <li>animation-play-state	Specifies whether the animation is running or paused</li>
+                        <li>animation-timing-function	Specifies the speed curve of the animation</li>
+                    </ul>
+                    <h3>Example: </h3>
+                    <pre>
+                        <code>
+                            /* The animation code */
+                            @keyframes example {
+                            from {background-color: red;}
+                            to {background-color: yellow;}
+                            }
+
+                            /* The element to apply the animation to */
+                            div {
+                            width: 100px;
+                            height: 100px;
+                            background-color: red;
+                            animation-name: example;
+                            animation-duration: 4s;
+                            }
+                        </code>
+                    </pre>
+                    <p>In the example above we have specified when the style will change by using the keywords "from" and "to" (which represents 0% (start) and 100% (complete)).
+                        It is also possible to use percent. By using percent, you can add as many style changes as you like.</p>
+                    <h3>Example: </h3>
+                    <pre>
+                        <code>
+                            /* The animation code */
+                            @keyframes example {
+                            0%   {background-color: red;}
+                            25%  {background-color: yellow;}
+                            50%  {background-color: blue;}
+                            100% {background-color: green;}
+                            }
+
+                            /* The element to apply the animation to */
+                            div {
+                            width: 100px;
+                            height: 100px;
+                            background-color: red;
+                            animation-name: example;
+                            animation-duration: 4s;
+                            }
+                        </code>
+                    </pre>
+                    <h3>animation-fill-mode</h3>
+
+                    <h3>animation-direction</h3>
+                    <p>The animation-direction property specifies whether an animation should be played forwards, backwards or in alternate cycles.The animation-direction property specifies whether an animation should be played forwards, backwards or in alternate cycles.</p>
+                    <ul>
+                        <li>normal - The animation is played as normal (forwards). This is default</li>
+                        <li>reverse - The animation is played in reverse direction (backwards)</li>
+                        <li>alternate - The animation is played forwards first, then backwards</li>
+                        <li>alternate-reverse - The animation is played backwards first, then forwards</li>
+                    </ul>
+                </div>
             </div>
-            <!-- Body Section -->
-            <div>
-                <!-- Pseudo Elements and Classes -->
-                <!-- Pseudo Elements -->
-                <h2>Pseudo Elements:</h2>
-                <p>A <b>CSS pseudo-element</b> is a keyword added to a selector that lets you style a specific part of the selected element(s).<br />
-                For example, it can be used to:</p>
-                <ul>
-                    <li>Style the first letter, or line, of an element</li>
-                    <li>Insert content before, or after, the content of an element</li>
-                </ul>
-                <h3>Syntax</h3>
-                <pre>
-                    <code>
-                        selector::pseudo-element {
-                            property: value;
-                        }
-                    </code>
-                </pre>
-                <h3>Examples</h3>
-                <ul>
-                    <li>first-line: Selects the first line.</li>
-                    <li>first-letter: Selects the first letter.</li>
-                    <li>before: Insert something before the content.</li>
-                    <li>after: Insert something after the content.</li>
-                    <li>marker: Selects the markers of list items.</li>
-                    <li>selection: Selects the portion of an element that is selected by a user.</li>
-                </ul>
-
-                <!-- Pseudo Classes -->
-                <h2>Pseudo Classes:</h2>
-                <p>A pseudo-class is used to define a special state of an element.<br />
-                For example, it can be used to:</p>
-                <ul>
-                    <li>Style an element when a user mouses over it</li>
-                    <li>Style visited and unvisited links differently</li>
-                    <li>Style an element when it gets focus</li>
-                </ul>
-                <h3>Syntax:</h3>
-                <pre>
-                    <code>
-                        selector:pseudo-class {
-                            property: value;
-                        }
-                    </code>
-                </pre>
-                <h3>Examples</h3>
-                <ul>
-                    <li>Anchor Pseudo-classes: :link, :visited, :hover, :active</li>
-                    <li>:first-child: pseudo-class matches a specified element that is the first child of another element.</li>
-                    <li>:last-child: Selects element that is the last child of its parent.</li>
-                    <li>nth-child(n): Selects the nth element of its parent.</li>
-                </ul>
-                <h3>:is Pesudo Class</h3>
-                <pre>
-                    <code>
-                        div:is(a, p, .card, #id) {
-                            ...
-                        }
-
-                        :is(header, .card) p:hover {
-                            ...
-                        }
-                    </code>
-                </pre>
-
-                <!-- Flexible Box -->
-                <h2>Flexbox</h2>
-                <p>A CSS3 layout mode that provides an easy and clean way to arrange items within a container.</p>
-                <ul>
-                    <li>No floats!</li>
-                    <li>Responsive and mobile friendly</li>
-                    <li>Positioning child elements is much easier</li>
-                    <li>Flex container's margins do not collapse with the margins of its contents</li>
-                    <li>Order of elements can be easily changed without editing the source HTML</li>
-                </ul>
-                <h3>Flexbox Model Concenpt</h3>
-                <ul>
-                    <li>The ability to alter item width and height to best fit in its containers available free space</li>
-                    <li>Flexbox is direction-agnostic, means it works for both horizetal axis and vertical axis</li>
-                    <li>Built for small scale layouts while the upcoming "Grid" specification is for more large scale</li>
-                </ul>
-                <h3>Flex Properties</h3>
-                <ul>
-                    <li>display: flex | inline</li>
-                    <li>flex-direction: defines the direction of the child elements, its a parent property. row(default) | column</li>
-                    <li>flex-wrap: if the screen sizes changes and you want the content to be wraped, use the "wrap" property. wrap | nowrap | wrapreverse</li>
-                    <li>flex-basis: defines the width of the child element like "width" property. But it is more flexy. <br />
-                        Rather than "width" use "flex-basis" in "flexboxes" &lt;length&gt;</li>
-                    <li>justify-content: Aligns the child elements horizantally. By defalaul, the child elements takes the whole width of the flexbox, first we will <br />
-                        give width to the child elements so that the parent container can have some empty space. Now we can <br />
-                        arrange the child elements horizentally by this property. flex-start(default) | flex-end | center | <br />
-                        space-between (gives margins between the child elements) | space-around (give margins on both sides of child element)</li>
-                    <li>align-self: felx-start | flex-end | center</li>
-                    <li>align-items: Aligns the child elements vertically. By default, the height of all child elements is same (stretch), if you want to give it the height<br />
-                        according to the content in it, use this parent property. flex-start | flex-end | center | stretch</li>
-                    <li>align-content: flex-start | flex-end | center</li>
-                    <li>flex-grow: &lt;length&gt;</li>
-                    <li>flex-shrink: &lt;length&gt;</li>
-                    <li>flex: defines length of the child item. &lt;length&gt;</li>
-                    <li>order: defines order of the child item, will everyone its oreder to work perfectly. &lt;length&gt;</li>
-                </ul>
-
-                <!-- Grid -->
-                <h2>Grid</h2>
-                <p>Grid allows us to create two dimentional layouts on a webpage, and align items in <br />
-                both columns and rows.</p>
-                <ul>
-                    <li>display: gird - Initiates the grid property</li>
-                    <li>grid-template-columns: Parent property, give widths to each child to see the effect</li>
-                    <li>grid-column-gap (now column-gap): defines the gape between columns. values: any css unit like 1em</li>
-                    <li>grid-row-gap: defines the gape between rows. values: any css unit like 1em</li>
-                    <li>grid-gap: shorthand for grid-column-gap and grid-row-gap</li>
-                    <li>grid-auto-rows: defines the fixed height of the elements in the rows. For flexible height <br />
-                    use grid-auto-rows: minmax(100px, auto); - By default the height will be 100px but if the content <br />
-                    goes beyond that height, it will stretch out to fill the content.</li>
-                    <li>jsutify-items: Align items horizantally. start | center | end | stretch (default)</li>
-                    <li>align-items: Align items vertically. start | center | end | stretch (default)</li>
-                    <li>align-self and justify-self: Child property which aligns the child elements both horizantally and vertically.</li>
-                    <li>grid-column: Stretches the child element horizantally. e.g: grid-column: 1/3; stretches the element from one to three horizantally.</li>
-                    <li>grid-row: Stretches the child element vertically. e.g: grid-row: 1/3; stretches the element from one to three vertically.</li>
-                </ul>
-                <p>In "grid-template-columns" use "fractions" instead of other CSS units as other units you gonna run into margins issues.<br />
-                1fr 2fr means the second column will be double of the first column.<br />
-                Examples: <br />
-                - 1fr 2fr 1fr - First and third column will be same width and the second will be the double<br />
-                - 1fr 1fr 1fr = repeat(3, 1fr) - Repeat three times 1fr.<br />
-                - 1fr 2fr 1fr 2fr = repeat(4, 1fr 2fr)</p>
-                <h3>Nesting Grids</h3>
-
-                <!-- Media Queries -->
-                <h2>Media Queries</h2>
-                <p>- Allows us to create CSS rules based on various parameters (viewport size, device type etc).<br />
-                - We can arrange our layout to suite a wide variety of different / screen sizes.</p>
-                <h3>Syntax:</h3>
-                <p>@media &lt;media-type&gt; and (expression) { CSS code } <br />
-                - media-types: scree | print | TV | speech or all</p>
-                <h3>Example:</h3>
-                <p>- @media TV and (min-width: 1200px) {} <br />
-                - @media screen and (max-width: 800px) {} - apply the CSS when the screen is 800px and less, if the screen is bigger than 800px then do not apply the rules. <br />
-                - @media (orientation: landscape/portrait) and (max-width: 700px) {} <br />
-                - @media (orientation: portrait) {}</p>
-
-                <!-- min-widht / max-width -->
-                <!-- Max-Width -->
-                <h2>Max-Width</h2>
-                <p>Defines the max-width of the media, when we set the media width say "max-width: 900px" <br />
-                and now if we increase the media size more than 900px, the defined size will remain 900px.</p>
-                <!-- Min-Width -->
-                <h2>Min-Width</h2>
-                <p>Defines the min-width of the media, when we set the media width say "min-width: 378px" <br />
-                and now if we decrease the media size less than 378px, the defined size will remain 378px.</p>
-                <p>No matther if we increase or decrease the size of the media whose maxium width will be 900px <br />
-                and minimum width will remain 378px.</p>
-            </div>
-        </div>
+        </main>
 
         <!-- Footer Section -->
         <footer>
