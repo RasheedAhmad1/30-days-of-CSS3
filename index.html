@@ -167,6 +167,23 @@
                     - @media screen and (max-width: 800px) {} - apply the CSS when the screen is 800px and less, if the screen is bigger than 800px then do not apply the rules. <br />
                     - @media (orientation: landscape/portrait) and (max-width: 700px) {} <br />
                     - @media (orientation: portrait) {}</p>
+
+                    <!-- Modren CSS techniques for responsive design -->
+                    <h3>Modren CSS Techniques for Responsive Design</h3>
+                    <h4>widths with min()</h4>
+                    <p>min(val1, val2) it means that choose the smaller of two available options, so if 1000px is smaller we&apos;ll use that or if 90% is smaller it will use that one.</p>
+                    <pre>
+                        <code>
+                            .container {
+                                width: min(90%, 1000px);
+                                margin-inline: auto; // Instead of 'margin: 0 auto;'
+                            }
+                        </code>
+                    </pre>
+                    <h4>padding and margin with max()</h4>
+                    <p>max() is the opposite of min(), means that choose the bigger of the two available options.</p>
+                    <h4>Typography with clamp()</h4>
+                    <p>See utopia type scale.</p>
     
                     <!-- min-widht / max-width -->
                     <!-- Max-Width -->
